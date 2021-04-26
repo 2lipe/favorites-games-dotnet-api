@@ -1,6 +1,10 @@
+using System;
+using FavoriteGames.Infra.Rawg.Client;
+using FavoriteGames.Infra.Rawg.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using FavoriteGames.Infra.Rawg.Settings;
+using Refit;
 
 namespace FavoriteGames.Infra.CrossCutting.IoC
 {
@@ -12,7 +16,13 @@ namespace FavoriteGames.Infra.CrossCutting.IoC
             rawgSettings.Validate();
 
             services.AddSingleton(rawgSettings);
+            
+            services.AddScoped<IRawgService, RawgService>();
 
+            services
+                .AddRefitClient<RawgClient>()
+                .ConfigureHttpClient(client => client.BaseAddress = new Uri($"{rawgSettings.Url}"));
+            
             return services;
         }
     }
