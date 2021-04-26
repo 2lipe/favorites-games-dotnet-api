@@ -1,5 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Api", "1 - Api", "{136C0CBD-8839-447F-B799-5F1C6AB8CB67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{C805182D-2ECC-48EF-BBC9-2D3FECCADA73}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{F8603BA1-2A73-4547-97B1-C624BB2366C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infraestructure", "4 - Infraestructure", "{4E41318C-6016-4C86-B223-11B4FCD054EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Test", "6 - Test", "{D16C4B69-2836-4C59-8FD7-020A48F98F1C}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FavoriteGames.Api", "src\FavoriteGames.Api\FavoriteGames.Api.csproj", "{FDDDC4AC-23E1-4F53-B604-61B5B7D7E32D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FavoriteGames.Domain", "src\FavoriteGames.Domain\FavoriteGames.Domain.csproj", "{D872C256-1C3F-4093-88C9-CE74ED992A10}"
@@ -10,19 +20,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FavoriteGames.Tests", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FavoriteGames.Application", "src\FavoriteGames.Application\FavoriteGames.Application.csproj", "{9BF83EB9-05E0-440D-9671-4D1AF9F7A0F2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Api", "1 - Api", "{136C0CBD-8839-447F-B799-5F1C6AB8CB67}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{C805182D-2ECC-48EF-BBC9-2D3FECCADA73}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{F8603BA1-2A73-4547-97B1-C624BB2366C1}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infraestructure", "4 - Infraestructure", "{4E41318C-6016-4C86-B223-11B4FCD054EB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Test", "5 - Test", "{D16C4B69-2836-4C59-8FD7-020A48F98F1C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FavoriteGames.Infra.Rawg", "src\FavoriteGames.Infra.Rawg\FavoriteGames.Infra.Rawg.csproj", "{BBC35B84-6FC2-4E92-9594-5C75E4436B66}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FavoriteGames.Infra.CrossCutting", "src\FavoriteGames.Infra.CrossCutting\FavoriteGames.Infra.CrossCutting.csproj", "{5AB85F53-56E5-41DB-BBC8-66E1433702FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Shared", "5 - Shared", "{E28321E4-90AA-49E7-A416-01A2EA3BE680}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FavoriteGames.Shared", "src\FavoriteGames.Shared\FavoriteGames.Shared.csproj", "{5822D7FE-2887-46A0-AC94-EC9C4CCF7848}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +62,10 @@ Global
 		{5AB85F53-56E5-41DB-BBC8-66E1433702FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AB85F53-56E5-41DB-BBC8-66E1433702FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AB85F53-56E5-41DB-BBC8-66E1433702FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5822D7FE-2887-46A0-AC94-EC9C4CCF7848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5822D7FE-2887-46A0-AC94-EC9C4CCF7848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5822D7FE-2887-46A0-AC94-EC9C4CCF7848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5822D7FE-2887-46A0-AC94-EC9C4CCF7848}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FDDDC4AC-23E1-4F53-B604-61B5B7D7E32D} = {136C0CBD-8839-447F-B799-5F1C6AB8CB67}
@@ -67,5 +75,6 @@ Global
 		{1432D53B-8BA0-4E7B-A82E-30B14030F557} = {D16C4B69-2836-4C59-8FD7-020A48F98F1C}
 		{BBC35B84-6FC2-4E92-9594-5C75E4436B66} = {4E41318C-6016-4C86-B223-11B4FCD054EB}
 		{5AB85F53-56E5-41DB-BBC8-66E1433702FD} = {4E41318C-6016-4C86-B223-11B4FCD054EB}
+		{5822D7FE-2887-46A0-AC94-EC9C4CCF7848} = {E28321E4-90AA-49E7-A416-01A2EA3BE680}
 	EndGlobalSection
 EndGlobal
