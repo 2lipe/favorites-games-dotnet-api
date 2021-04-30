@@ -1,19 +1,22 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace FavoriteGames.Infra.Rawg.Dtos
 {
     public class RawgGenreDto
     {
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public int Id { get; set; }
 
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("slug")]
+        [JsonPropertyName("slug")]
         public string Slug { get; set; }
 
-        [JsonProperty("games_count")]
+        [JsonPropertyName("games_count")]
         public int GamesCount { get; set; }
+
+        [JsonPropertyName("image_background")]
+        public string ImageBackground { get; set; }
     }
 }

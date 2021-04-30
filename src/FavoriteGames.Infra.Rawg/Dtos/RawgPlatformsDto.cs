@@ -1,34 +1,62 @@
-using Newtonsoft.Json;
+using System;
+using System.Text.Json.Serialization;
 
 namespace FavoriteGames.Infra.Rawg.Dtos
 {
     public class RawgPlatformDto
     {
-        [JsonProperty("platform")]
+        [JsonPropertyName("platform")]
         public PlatformDto Platform { get; set; }
 
-        [JsonProperty("released_at")]
+        [JsonPropertyName("released_at")]
         public string ReleasedAt { get; set; }
 
-        [JsonProperty("requirements_en")]
-        public object RequirementsEn { get; set; }
+        [JsonPropertyName("requirements_en")]
+        public RequirementsDto RequirementsEn { get; set; }
 
-        [JsonProperty("requirements_ru")]
-        public object RequirementsRu { get; set; }
+        [JsonPropertyName("requirements_ru")]
+        public RequirementsDto RequirementsRu { get; set; }
+    }
+    
+    public class RequirementsDto
+    {
+        [JsonPropertyName("minimum")]
+        public string Minimum { get; set; }
+
+        [JsonPropertyName("recommended")]
+        public string Recommended { get; set; }
     }
     
     public class PlatformDto
     {
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public int Id { get; set; }
 
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("slug")]
+        [JsonPropertyName("slug")]
         public string Slug { get; set; }
 
-        [JsonProperty("games_count")]
+        [JsonPropertyName("image")]
+        public string Image { get; set; }
+
+        [JsonPropertyName("year_end")]
+        public int? YearEnd { get; set; }
+
+        [JsonPropertyName("year_start")]
+        public int? YearStart { get; set; }
+
+        [JsonPropertyName("games_count")]
         public int GamesCount { get; set; }
+
+        [JsonPropertyName("image_background")]
+        public string ImageBackground { get; set; }
+    }
+    
+    public class RawgParentPlatformDto
+    {
+        [JsonPropertyName("platform")]
+        public PlatformDto Platform { get; set; }
     }
 }

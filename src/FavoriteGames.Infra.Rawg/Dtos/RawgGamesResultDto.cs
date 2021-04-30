@@ -1,20 +1,20 @@
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace FavoriteGames.Infra.Rawg.Dtos
 {
     public class RawgGamesResultDto<T>
     {
-        [JsonProperty("count")] 
+        [JsonPropertyName("count")]
         public int Count { get; set; }
 
-        [JsonProperty("next")] 
+        [JsonPropertyName("next")]
         public string Next { get; set; }
 
-        [JsonProperty("previous")] 
-        public object Previous { get; set; }
+        [JsonPropertyName("previous")]
+        public string Previous { get; set; }
 
-        [JsonProperty("results")] 
+        [JsonPropertyName("results")]
         public List<T> Results { get; set; }
     }
 }

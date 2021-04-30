@@ -1,4 +1,5 @@
 using FavoriteGames.Infra.CrossCutting.IoC;
+using FavoriteGames.Infra.Rawg.Mapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +22,8 @@ namespace FavoriteGames.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRawg(Configuration);
+            
+            services.AddAutoMapper(typeof(RawgGamesDtoToViewModelMapper));
             
             services.AddControllers();
             services.AddSwaggerGen(c =>
