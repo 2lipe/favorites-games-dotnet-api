@@ -8,6 +8,7 @@ namespace FavoriteGames.Infra.Rawg.Mapper
     {
         public RawgGamesDtoToViewModelMapper()
         {
+            CreateMap<RawgGamesResultDto<RawgGamesDto>, RawgGamesResultViewModel<RawgGamesViewModel>>();
             CreateMap<RawgGamesDto, RawgGamesViewModel>();
             CreateMap<RawgEsrbRatingDto, RawgEsrbRatingViewModel>();
             CreateMap<RawgGenreDto, RawgGenreViewModel>();

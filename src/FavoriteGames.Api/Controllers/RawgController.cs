@@ -17,7 +17,7 @@ namespace FavoriteGames.Api.Controllers
         [ProducesResponseType(200)]
         public async Task<IActionResult> GetAllGames()
         {
-            var games = await _rawgService.GetAllGames();
+            var games = await _rawgService.GetAllGamesAsync();
 
             return Ok(games);
         }
