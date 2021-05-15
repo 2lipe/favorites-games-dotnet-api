@@ -1,5 +1,6 @@
 using System;
 using FavoriteGames.Infra.Rawg.Client;
+using FavoriteGames.Infra.Rawg.Mapper;
 using FavoriteGames.Infra.Rawg.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +19,8 @@ namespace FavoriteGames.Infra.CrossCutting.IoC
             services.AddSingleton(rawgSettings);
             
             services.AddScoped<IRawgService, RawgService>();
+            
+            services.AddAutoMapper(typeof(RawgGamesDtoToViewModelMapper));
 
             services
                 .AddRefitClient<RawgClient>()

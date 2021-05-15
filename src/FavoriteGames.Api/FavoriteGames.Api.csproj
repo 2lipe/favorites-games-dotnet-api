@@ -3,13 +3,15 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
-    </ItemGroup>
+    
 
     <ItemGroup>
       <ProjectReference Include="..\FavoriteGames.Infra.CrossCutting\FavoriteGames.Infra.CrossCutting.csproj" />
+    </ItemGroup>
+    
+
+    <ItemGroup>
+      <PackageReference Include="Optsol.Components.Service" Version="1.14.0" />
     </ItemGroup>
 
 </Project>

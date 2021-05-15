@@ -4,4 +4,9 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Flunt" Version="2.0.3" />
+      <PackageReference Include="Optsol.Components.Domain" Version="1.14.0" />
+    </ItemGroup>
+
 </Project>

@@ -4,4 +4,8 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Optsol.Components.Shared" Version="1.14.0" />
+    </ItemGroup>
+
 </Project>
