@@ -13,13 +13,22 @@ namespace FavoriteGames.Api.Controllers
             _rawgService = rawgService;
         }
 
-        [HttpGet("api/v1/rawg")]
+        [HttpGet("api/v1/rawg/games")]
         [ProducesResponseType(200)]
         public async Task<IActionResult> GetAllGames()
         {
             var games = await _rawgService.GetAllGamesAsync();
 
             return Ok(games);
+        }
+        
+        [HttpGet("api/v1/rawg/games/{id}")]
+        [ProducesResponseType(200)]
+        public async Task<IActionResult> GetGameById([FromRoute] string id)
+        {
+            var game = await _rawgService.GetGameByIdAsync(id);
+
+            return Ok(game);
         }
     }
 }

@@ -19,8 +19,10 @@ namespace FavoriteGames.Infra.CrossCutting.IoC
             services.AddSingleton(rawgSettings);
             
             services.AddScoped<IRawgService, RawgService>();
-            
-            services.AddAutoMapper(typeof(RawgGamesDtoToViewModelMapper));
+
+            services
+                .AddAutoMapper(typeof(RawgGamesDtoToViewModelMapper))
+                .AddAutoMapper(typeof(RawgGameDetailsDtoToViewModelMapper));
 
             services
                 .AddRefitClient<RawgClient>()
