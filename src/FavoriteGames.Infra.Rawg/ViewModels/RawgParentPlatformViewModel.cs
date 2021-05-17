@@ -1,7 +1,13 @@
+using Optsol.Components.Application.DataTransferObjects;
+
 namespace FavoriteGames.Infra.Rawg.ViewModels
 {
-    public class RawgParentPlatformViewModel
+    public class RawgParentPlatformViewModel : BaseDataTransferObject
     {
         public PlatformViewModel Platform { get; set; }
+        
+        public override void Validate()
+        {
+        }
     }
 }

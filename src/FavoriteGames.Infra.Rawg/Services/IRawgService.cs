@@ -7,5 +7,6 @@ namespace FavoriteGames.Infra.Rawg.Services
     {
         Task<RawgGamesResultViewModel<RawgGamesViewModel>> GetAllGamesAsync();
         Task<RawgGamesDetailsViewModel> GetGameByIdAsync(string id);
+        Task<RawgGamesResultViewModel<RawgGameTrailersViewModel>> GetGameTrailersByIdAsync(string id);
     }
 }

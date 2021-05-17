@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using Optsol.Components.Application.DataTransferObjects;
 
 namespace FavoriteGames.Infra.Rawg.ViewModels
 {
-    public class RawgGamesViewModel
+    public class RawgGamesViewModel : BaseDataTransferObject
     {
         public int Id { get; set; }
         public string Slug { get; set; }
@@ -20,5 +21,9 @@ namespace FavoriteGames.Infra.Rawg.ViewModels
         public List<RawgTagViewModel> Tags { get; set; }
         public RawgEsrbRatingViewModel EsrbRating { get; set; }
         public List<RawgShortScreenshotViewModel> ShortScreenshots { get; set; }
+        
+        public override void Validate()
+        {
+        }
     }
 }

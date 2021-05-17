@@ -22,7 +22,8 @@ namespace FavoriteGames.Infra.CrossCutting.IoC
 
             services
                 .AddAutoMapper(typeof(RawgGamesDtoToViewModelMapper))
-                .AddAutoMapper(typeof(RawgGameDetailsDtoToViewModelMapper));
+                .AddAutoMapper(typeof(RawgGameDetailsDtoToViewModelMapper))
+                .AddAutoMapper(typeof(RawgGameTrailersDtoToViewModelMapper));
 
             services
                 .AddRefitClient<RawgClient>()

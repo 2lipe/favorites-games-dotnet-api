@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using FavoriteGames.Infra.Rawg.Dtos;
+using Optsol.Components.Application.DataTransferObjects;
 
 namespace FavoriteGames.Infra.Rawg.ViewModels
 {
-    public class RawgGamesDetailsViewModel
+    public class RawgGamesDetailsViewModel : BaseDataTransferObject
     {
         public int Id { get; set; }
         public string Slug { get; set; }
@@ -44,6 +45,10 @@ namespace FavoriteGames.Infra.Rawg.ViewModels
         public List<RawgTagViewModel> Tags { get; set; }
         public List<RawgPublisherViewModel> Publishers { get; set; }
         public RawgEsrbRatingViewModel EsrbRating { get; set; }
-        public string DescriptionRaw { get; set; }   
+        public string DescriptionRaw { get; set; }
+        
+        public override void Validate()
+        {
+        }
     }
 }

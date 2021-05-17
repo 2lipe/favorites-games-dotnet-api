@@ -1,34 +1,44 @@
 using System.Threading.Tasks;
 using FavoriteGames.Infra.Rawg.Services;
 using Microsoft.AspNetCore.Mvc;
+using Optsol.Components.Service.Responses;
 
 namespace FavoriteGames.Api.Controllers
 {
-    public class RawgController : ControllerBase
+    public class GamesController : BaseController
     {
         private readonly IRawgService _rawgService;
-
-        public RawgController(IRawgService rawgService)
+        
+        public GamesController(IResponseFactory responseFactory, IRawgService rawgService) : base(responseFactory)
         {
             _rawgService = rawgService;
         }
 
-        [HttpGet("api/v1/rawg/games")]
+        [HttpGet]
         [ProducesResponseType(200)]
         public async Task<IActionResult> GetAllGames()
         {
             var games = await _rawgService.GetAllGamesAsync();
 
-            return Ok(games);
+            return CreateResult(games);
         }
         
-        [HttpGet("api/v1/rawg/games/{id}")]
+        [HttpGet("{id}")]
         [ProducesResponseType(200)]
         public async Task<IActionResult> GetGameById([FromRoute] string id)
         {
             var game = await _rawgService.GetGameByIdAsync(id);
 
-            return Ok(game);
+            return CreateResult(game);
+        }
+        
+        [HttpGet("{id}/trailers")]
+        [ProducesResponseType(200)]
+        public async Task<IActionResult> GetGameTrailerById([FromRoute] string id)
+        {
+            var trailer = await _rawgService.GetGameTrailersByIdAsync(id);
+
+            return CreateResult(trailer);
         }
     }
 }
