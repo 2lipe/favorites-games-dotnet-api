@@ -46,7 +46,7 @@ namespace FavoriteGames.Infra.Rawg.Dtos
         public RawgAddedByStatusDto AddedByStatus { get; set; }
 
         [JsonPropertyName("metacritic")]
-        public int Metacritic { get; set; }
+        public int? Metacritic { get; set; }
 
         [JsonPropertyName("playtime")]
         public int Playtime { get; set; }
