@@ -13,22 +13,37 @@ namespace FavoriteGames.Infra.CrossCutting.IoC
     {
         public static IServiceCollection AddRawg(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddRawgServices(configuration);
+
+            services.AddRawgMappers();
+            
+            return services;
+        }
+
+        private static IServiceCollection AddRawgServices(this IServiceCollection services, IConfiguration configuration)
+        {
             var rawgSettings = configuration.GetSection(nameof(RawgSettings)).Get<RawgSettings>();
             rawgSettings.Validate();
-
+            
             services.AddSingleton(rawgSettings);
             
             services.AddScoped<IRawgService, RawgService>();
-
-            services
-                .AddAutoMapper(typeof(RawgGamesDtoToViewModelMapper))
-                .AddAutoMapper(typeof(RawgGameDetailsDtoToViewModelMapper))
-                .AddAutoMapper(typeof(RawgGameTrailersDtoToViewModelMapper));
-
+            
             services
                 .AddRefitClient<RawgClient>()
                 .ConfigureHttpClient(client => client.BaseAddress = new Uri($"{rawgSettings.Url}"));
-            
+
+            return services;
+        }
+
+        private static IServiceCollection AddRawgMappers(this IServiceCollection services)
+        {
+            services
+                .AddAutoMapper(typeof(RawgGamesDtoToViewModelMapper))
+                .AddAutoMapper(typeof(RawgGameDetailsDtoToViewModelMapper))
+                .AddAutoMapper(typeof(RawgGameTrailersDtoToViewModelMapper))
+                .AddAutoMapper(typeof(RawgGameStoreDtoToViewModelMapper));
+
             return services;
         }
     }

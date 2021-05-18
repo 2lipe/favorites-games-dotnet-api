@@ -84,5 +84,21 @@ namespace FavoriteGames.Infra.Rawg.Services
                 throw new RawgException(e.Message);
             }
         }
+
+        public async Task<RawgGamesResultViewModel<RawgGameStoreViewModel>> GetGameStoresByIdAsync(string id)
+        {
+            try
+            {
+                var rawgGameStoreDto = await _rawgClient.GetRawgGameStores(id, _rawgSettings.Key);
+
+                var rawgGameStoreVm = _mapper.Map<RawgGamesResultViewModel<RawgGameStoreViewModel>>(rawgGameStoreDto);
+
+                return rawgGameStoreVm;
+            }
+            catch (Exception e)
+            {
+                throw new RawgException(e.Message);
+            }
+        }
     }
 }

@@ -21,5 +21,9 @@ namespace FavoriteGames.Infra.Rawg.Client
         [Get("/games/{id}/additions?key={key}")]
         [Headers("Authorization: Basic", "Content-Type: application/x-www-form-urlencoded")]
         Task<RawgGamesResultDto<RawgGamesDto>> GetRawgGameDlcs([Query] string id, [Query] string key);
+        
+        [Get("/games/{id}/stores?key={key}")]
+        [Headers("Authorization: Basic", "Content-Type: application/x-www-form-urlencoded")]
+        Task<RawgGamesResultDto<RawgGameStoreDto>> GetRawgGameStores([Query] string id, [Query] string key);
     }
 }

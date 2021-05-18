@@ -49,5 +49,14 @@ namespace FavoriteGames.Api.Controllers
 
             return CreateResult(dlcs);
         }
+        
+        [HttpGet("{id}/stores")]
+        [ProducesResponseType(200)]
+        public async Task<IActionResult> GetGameStoreById([FromRoute] string id)
+        {
+            var stores = await _rawgService.GetGameStoresByIdAsync(id);
+
+            return CreateResult(stores);
+        }
     }
 }
