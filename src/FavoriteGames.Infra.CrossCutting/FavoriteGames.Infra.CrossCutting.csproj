@@ -11,6 +11,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\FavoriteGames.Infra.Rawg\FavoriteGames.Infra.Rawg.csproj" />
+      <ProjectReference Include="..\FavoriteGames.Infra\FavoriteGames.Infra.csproj" />
     </ItemGroup>
 
 </Project>
